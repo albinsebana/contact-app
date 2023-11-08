@@ -1,0 +1,12 @@
+<h1>Add New Contact</h1>
+<form [formGroup]="addContactDetailsForm" (ngSubmit)="insert(addContactDetailsForm.value)">
+    <input type="text" formControlName="contactId" placeholder="Enter Contact ID"><br>
+
+    <!-- <input type="text" formControlName="type" placeholder="Phone/Email "><br> -->
+    Phone<input type="radio" formControlName="type" value="phone">phone <br>
+    Email<input type="radio" formControlName="type" value="email">email
+    <input type="text" formControlName="numberOrEmail" placeholder="Enter phone / email"><br>
+   <br>
+    <button>Add</button>
+
+</form>

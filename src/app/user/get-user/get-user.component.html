@@ -1,0 +1,32 @@
+<p>
+    <button routerLink="/addUser">add new user</button>
+
+</p>
+<p>
+    <button routerLink="/findUser">Find user</button>
+
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">IsAdmin</th>
+            <th scope="col">IsActive</th>
+            <th scope="col">Total Con<th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userData">
+            <th scope="row">{{user.userId}}</th>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.isAdmin=="True"?"Yes":"No"}}</td>
+                <td>{{user.isActive=="True"?"Yes":"No"}}</td>
+                <td>{{user.countContacts}}</td>           
+        </tr>
+    </tbody>
+
+</table>

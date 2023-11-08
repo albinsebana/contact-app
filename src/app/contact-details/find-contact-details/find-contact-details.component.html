@@ -1,0 +1,24 @@
+<h1>Find Contact Details</h1>
+<form [formGroup]="findContactDetails" (ngSubmit)="findContactDetailsById(findContactDetails.value)">
+    Enter User ID: <input type="number" formControlName="detailId"><br>
+    <button>Find</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Type</th>
+            <th scope="col">Number or Email</th>
+            <th scope="col">Contact ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="show && contactDetailsData">
+            <th scope="row">{{ contactDetailsData?.contactId }}</th>
+            <td>{{ contactDetailsData?.type }}</td>
+            <td>{{ contactDetailsData?.numberOrEmail }}</td>
+            <td>{{ contactDetailsData?.contactId }}</td>
+        </tr>
+    </tbody>
+</table>

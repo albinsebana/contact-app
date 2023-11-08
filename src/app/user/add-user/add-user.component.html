@@ -1,0 +1,11 @@
+<h1>Add New User</h1>
+<form [formGroup]="addUserForm" (ngSubmit)="insert(addUserForm.value)">
+    <input type="text" formControlName="firstName" placeholder="Enter First Name"><br>
+    <input type="text" formControlName="lastName" placeholder="Enter Last Name"><br>
+    IsAdmin?<input type="radio" formControlName="isAdmin" value="True">Yes
+    <input type="radio" formControlName="isAdmin" value="False">No <br>
+    IsActive?<input type="radio" formControlName="isActive" value="True">Yes
+    <input type="radio" formControlName="isAdmin" value="False">No
+   <br>
+    <button>Add</button>
+</form>

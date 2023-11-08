@@ -1,0 +1,26 @@
+<p>
+    <button routerLink="/addContactDetails">add new Contact Details</button>
+</p>
+<p>
+    <button routerLink="/findContactDetails">Find Contact Details</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Type</th>
+            <th scope="col">Number or Email</th>
+            <th scope="col">Contact ID</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contactDtl of contactDetailsData">
+            <th scope="row">{{contactDtl.detailId}}</th>
+                <td>{{contactDtl.type}}</td>
+                <td>{{contactDtl.numberOrEmail}}</td>
+                <td>{{contactDtl.contactId}}</td>           
+        </tr>
+    </tbody>
+
+</table>

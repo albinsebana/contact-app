@@ -1,0 +1,17 @@
+<h1>Add New Contact</h1>
+<form [formGroup]="addContactForm" (ngSubmit)="insert(addContactForm.value)">
+    <input type="text" formControlName="userId" placeholder="Enter User ID"><br>
+
+    <input type="text" formControlName="firstName" placeholder="Enter First Name"><br>
+
+    <input type="text" formControlName="lastName" placeholder="Enter Last Name"><br>
+
+    <!-- IsAdmin?<input type="radio" formControlName="isAdmin" value="True">Yes
+    <input type="radio" formControlName="isAdmin" value="False">No <br> -->
+
+    IsActive?<input type="radio" formControlName="isActive" value="True">Yes
+    <input type="radio" formControlName="isActive" value="False">No
+   <br>
+    <button>Add</button>
+
+</form>

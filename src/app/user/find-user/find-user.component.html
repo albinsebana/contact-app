@@ -1,0 +1,33 @@
+<h1>Find User</h1>
+<form [formGroup]="findUser" (ngSubmit)="findUserById(findUser.value)">
+    Enter User ID: <input type="number" formControlName="userId" ><br>
+    <button>Find</button>
+</form>
+<br>
+<div class="alert alert-danger" *ngIf="showError">
+    <strong>Not Allowed</strong> {{errorMessage}}
+
+</div >
+<table class="table" *ngIf="show">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">IsAdmin</th>
+            <th scope="col">IsActive</th>
+            <th scope="col">Total Con<th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <th scope="row">{{userData.userId}}</th>
+                <td>{{userData.firstName}}</td>
+                <td>{{userData.lastName}}</td>
+                <td>{{userData.isAdmin=="True"?"Yes":"No"}}</td>
+                <td>{{userData.isActive=="True"?"Yes":"No"}}</td>
+                <td>{{userData.countContacts}}</td>           
+        </tr>
+    </tbody>
+
+</table>

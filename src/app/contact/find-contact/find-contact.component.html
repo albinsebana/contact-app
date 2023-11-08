@@ -1,0 +1,31 @@
+<h1>Find Contact</h1>
+<form [formGroup]="findContact" (ngSubmit)="findContactById(findContact.value)">
+  Enter Contact ID: <input type="number" formControlName="contactId"><br>
+  <button>Find</button>
+</form>
+<br>
+<div class="alert alert-danger" *ngIf="showError">
+  <strong>Error</strong> {{ errorMessage }}
+</div>
+<table class="table" *ngIf="show">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">IsAdmin</th>
+      <th scope="col">IsActive</th>
+      <th scope="col">Total Contacts</th> <!-- Fixed typo here -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{ contactData.userId }}</th> <!-- Updated to use contactData -->
+      <td>{{ contactData.firstName }}</td>
+      <td>{{ contactData.lastName }}</td>
+      <td>{{ contactData.isAdmin == "True" ? "Yes" : "No" }}</td>
+      <td>{{ contactData.isActive == "True" ? "Yes" : "No" }}</td>
+      <td>{{ contactData.countContacts }}</td>
+    </tr>
+  </tbody>
+</table>

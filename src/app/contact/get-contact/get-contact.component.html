@@ -1,0 +1,34 @@
+<p>
+    <button routerLink="/addContacts">add new Contact</button>
+</p>
+<p>
+    <button routerLink="/findContact">Find COntact</button>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">IsAdmin</th>
+            <th scope="col">IsActive</th>
+            <!-- <th scope="col">Total Con</th> -->
+            <th scope="col">User Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of contactData">
+            <th scope="row">{{contact.contactId}}</th>
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.lastName}}</td>
+                <td>{{contact.isAdmin=="True"?"Yes":"No"}}</td>
+                <td>{{contact.isActive=="True"?"Yes":"No"}}</td>
+                <!-- <td>{{contact.countContacts}}</td>      -->
+                <td>{{contact.userId}}</td>        
+        </tr>
+    </tbody>
+
+</table>
+
+<router-outlet></router-outlet>
